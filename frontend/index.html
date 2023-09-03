@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+</head>
+<body>
+  <h2>Frontend test</h2>
+  <div>Backend response: </div><div id="backendResponse"></div>
+</body>
+<script>
+  function pingBackend(){
+    fetch('http://test-backend.info/ping')
+    .then((response) => response.text())
+    .then((text) => {
+      document.getElementById('backendResponse').innerHTML = text;
+    });
+  }
+  pingBackend()
+</script>
+</html>
