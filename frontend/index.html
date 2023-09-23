@@ -10,7 +10,8 @@
 </body>
 <script>
   function pingBackend(){
-    fetch('http://test-app.info/backend/ping')
+    
+    fetch(`http://${window.location.host}/backend/ping`)
     .then((response) => response.text())
     .then((text) => {
       document.getElementById('backendResponse').innerHTML = text;
